@@ -101,32 +101,29 @@ bool LinkedList<T>::removeBack()
 	Node<T>* lastNode = nullptr;
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
-        int count = 0;
-        if(lastNode == nullptr)
+        int count = 1;
+        if(m_front == nullptr)
         {
            return(isRemoved);
         }
-        for(int i = 0; i < m_size; i++)
+        else
         {
-           if(secondintoLast->getValue())
-           {
-             count++;
-             isRemoved = true;
-             return(isRemoved);  
-           }
-           else if(lastNode->getValue())
-           {
-             count++;
-             isRemoved = true;
-             return(isRemoved);
-           }
-           else
-           {
-             isRemoved = false;
-             return(isRemoved);
-           }
+          lastNode = m_front;
+          while(lastNode->getNext() != nullptr)
+          {
+            lastNode = lastNode->getNext();
+            count++;
+            if(count + 1 = m_size)
+            {
+              secondintoLast = lastNode;
+            }
+          }
+          secondintoLast->setNext(nullptr);
+          delete lastNode;
+          m_size--;
+          isRemoved = true;
         }
-        
+        return(isRemoved);      
 }	
 
 template <typename T>
