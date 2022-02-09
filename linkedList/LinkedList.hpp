@@ -114,7 +114,7 @@ bool LinkedList<T>::removeBack()
              isRemoved = true;
              return(isRemoved);  
            }
-           else if(lastNode->getVale())
+           else if(lastNode->getValue())
            {
              count++;
              isRemoved = true;
