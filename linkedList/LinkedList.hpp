@@ -107,7 +107,7 @@ bool LinkedList<T>::removeBack()
            {
               isRemoved = true;
            }
-           else if(secondintoLast->getvalue())
+           else if(secondintoLast->getValue())
            {
               isRemoved = false;
            } 
